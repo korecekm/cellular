@@ -81,7 +81,7 @@ namespace Cellular.Controller
         {
             if (threadCount > 1)
             {
-                int m = firstRow + threadCount * chunkSize / 2;
+                int m = firstRow + (threadCount/2) * chunkSize;
                 var rightTask = new Task(
                     () => ComputeNextParallel(threadCount / 2, chunkSize, m, limitRow));
                 rightTask.Start();
