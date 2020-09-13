@@ -1,0 +1,40 @@
+!Populated (P1, P2, P3)
+!NEIGHBOR_COUNT count(-1:-1, 0:-1, 1:-1, -1:0, 1:0, -1:1, 0:1, 1:1)Populated
+!NC NEIGHBOR_COUNT
+
+!Live1 [NC = 2] ->
+!Live2 [NC = 3] ->
+
+!Death [NC < 2] -> empty  \\
+       [NC > 3] -> empty
+
+empty
+#e6ac00 {
+    [NC = 3] -> P1
+}
+
+!P1 populated1
+!P2 populated2
+!P3 populated3
+
+populated1
+(51, 51, 255) {
+    Death
+    Live1 P2
+    Live2 P3
+}
+
+populated2
+#804000
+{
+    Death
+    Live1 P1
+    Live2 P3
+}
+
+populated3
+(51, 102, 0) {
+    Death
+    Live1 P2
+    Live2 P1
+}

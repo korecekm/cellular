@@ -1,0 +1,2 @@
+!NC count(-1:-1, 0:-1, 1:-1, -1:0, 1:0, -1:1, 0:1, 1:1)(populated)
+empty #bf8040{[NC=3]->populated}populated #663300{[NC<2]->empty[NC>3]->empty}

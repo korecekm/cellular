@@ -1,0 +1,28 @@
+!E empty
+!P populated
+!EColor #bf8040
+!PColor #663300
+
+!EC EColor
+!PC PColor
+
+!Part1 E EC{ \\
+       [NC = 3] A P
+
+Part1 Part2 Part3
+
+!Part2 \\
+       \\
+} P PC { LC A E
+!Part3 GC A E}
+       
+!NC1 count(-1:-1, 
+!NC2 0:-1, 1:-1, -1:0, 1:0, -1:1, NC3
+!NC3 0:1, 1:1)(P)
+!NeighborColor NC1 NC2
+!NC NeighborColor
+
+!Arrow ->
+!LC [NC < 2]
+!GC [NC > 3]
+!A Arrow
