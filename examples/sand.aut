@@ -1,0 +1,25 @@
+!DOWN -1:1, 0:1, 1:1
+
+!OverflowRules                               \\
+	[(1:-1) = (sand),                    \\
+	 (1:0) = (SOLID)]        -> sand     \\
+                                             \\
+	[(-1:-1) = (sand),                   \\
+	 (-2:0, -1:0) = (SOLID)] -> sand
+
+!SOLID firm, sand
+
+neutral
+(0, 71, 179) {
+    [(0:-1) = (sand)] -> sand
+    OverflowRules
+}
+
+firm
+(0, 77, 0) { }
+
+sand
+(230, 172, 0) {
+    [count(DOWN)(sand, firm) < 3,
+     (0:-1) = (neutral, firm)] -> neutral
+}

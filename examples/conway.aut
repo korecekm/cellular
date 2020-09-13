@@ -1,0 +1,12 @@
+!NEIGHBOR_COUNT count(-1:-1, 0:-1, 1:-1, -1:0, 1:0, -1:1, 0:1, 1:1)(populated)
+
+empty
+#bf8040 {
+    [NEIGHBOR_COUNT = 3] -> populated
+}
+
+populated
+#663300 {
+    [NEIGHBOR_COUNT < 2] -> empty
+    [NEIGHBOR_COUNT > 3] -> empty
+}
